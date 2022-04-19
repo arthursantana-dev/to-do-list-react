@@ -1,0 +1,7 @@
+:root {
+	/* Light mode */
+	--lm-font: #000000;
+	--lm-bg: #fcfcfc;
+	--lm-card: #FFFFFF;
+	--lm-desc: gray;
+}

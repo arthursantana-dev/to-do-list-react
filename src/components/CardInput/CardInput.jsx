@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './CardInput.css'
 
 const Cardinput = (props) => {
 	return (
-		<div>
+		<div className='input-wrapper'>
 			<input 
 				type="text" 
 				className="i-card" 
@@ -10,7 +11,7 @@ const Cardinput = (props) => {
 				placeholder='Título da nota'
 				onChange={e => props.setTitle(e.target.value)}
 			/>
-			<br />
+
 			<input 
 				type="text" 
 				className="i-card" 
@@ -18,7 +19,7 @@ const Cardinput = (props) => {
 				placeholder='Conteúdo da nota'
 				onChange={e => props.setContent(e.target.value)}
 			/>
-			<br />
+
 			<button 
 				className="send-button"
 				onClick={() => props.inputSubmit()}
