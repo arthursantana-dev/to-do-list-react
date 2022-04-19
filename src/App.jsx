@@ -1,18 +1,16 @@
 import "./App.css";
 import Card from "./components/Card/Card";
+import Cardinput from "./components/CardInput/CardInput";
+
 import React, { useState } from "react";
 
 function App() {
-	const [notes, setNotes] = useState([
-		{
-			title: "título 1",
-			content: "conteúdo 1",
-		},
-		{
-			title: "título 2",
-			content: "conteúdo 2",
-		},
-	]);
+	// Array de notas
+	const [notes, setNotes] = useState([]);
+
+	//Value dos inputs de CardInput.js
+	const [inputTitle, setInputTitle] = useState("");
+	const [inputContent, setInputContent] = useState("");
 
 	return (
 		<>
@@ -26,16 +24,11 @@ function App() {
 					id={notes.indexOf(note)}
 				/>
 			)}
-			<button 
-				onClick={
-					() => { setNotes([...notes, 
-							{ 
-								title: "título 3", 
-								content: "conteúdo 3" }]) 
-							}
-					}>
-					adicionar card
-			</button>
+			<Cardinput 
+				setTitle={setInputTitle} 
+				setContent={setInputContent}
+				inputSubmit={() => {setNotes([...notes, {title: inputTitle, content: inputContent}])}}
+			/>
 		</>
 	)
 

@@ -5,11 +5,11 @@ const Card = (props) => {
 		<div className='card-wrapper'>
 			<h2 className="card-title">{props.cardTitle}</h2>
 			<p className="card-content">{props.cardContent}</p>
-			<a onClick={
+			<button onClick={
 				() => {
 					props.setNotes(props.notes.filter((n) => props.notes.indexOf(n) != props.id))
 				}
-			}>me delete!</a>
+			}>me delete!</button>
 		</div>
 	);
 }
